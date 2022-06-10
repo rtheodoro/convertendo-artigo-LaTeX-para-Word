@@ -1,6 +1,6 @@
 # Convertendo LaTeX em Word (.tex em .docx) com github actions
 
-# Primeiro Passo - Conectando o Overleaf com o Github
+## Primeiro Passo - Conectando o Overleaf com o Github
 
 Crie uma conta em Overleaf.com e github.com
 
@@ -10,7 +10,7 @@ Depois, basta criar um projeto no Github e importar ele para o Overleaf, ou vice
 Mais informações, [aqui](https://www.overleaf.com/learn/how-to/Using_Git_and_GitHub#Overleaf_GitHub_Synchronization)
 
 
-# Segundo Passo - Criando o action
+## Segundo Passo - Criando o action
 
 No github, acesse o diretório do projeto e clique em `Actions`.
 
@@ -57,6 +57,6 @@ AINDA NÃO FUNCIONA, ESTOU CRIANDO!
 Aceito dicas, rs
 
 
-# Referências
+## Referências
 
 [r-bloggers - Joshua Cook (2020)](https://www.r-bloggers.com/2020/03/github-actions-for-compiling-and-converting-latex/) 
