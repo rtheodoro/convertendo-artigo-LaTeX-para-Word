@@ -1,0 +1,341 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Modelo de Trabalho Acadêmico da FEA-RP (tese de doutorado, dissertação de
+% mestrado e trabalhos monográficos em geral) em conformidade com 
+% ABNT NBR 14724:2011 e Diretrizes para Confecção de Teses e Dissertações da USP
+% ------------------------------------------------------------------------
+% ---------------------------------------------------------
+%\documentclass[blind, ppgcc]{fearp} %imprime versões da capa e da folha de rosto sem as informações do nomedo autor e orientador.
+\documentclass[ppgcc]{fearp}
+\autor          {Ricardo Theodoro}
+\titulo         {Todo o documento aqui é apenas um exemplo.}
+\data           {2022} 
+\local          {Ribeirão Preto}
+\orientador[Orientador]{Prof. Dr.}{Exemplo}
+\engtitle{Credit Union Eficiency and the regulations by Brazilian Central Bank} % Título em inglês do trabalho
+
+% ----------------------------------------------------------------------------%
+%         INFORMAÇÕES DO PDF                                                  %
+% ----------------------------------------------------------------------------%
+\hypersetup{
+  pdftitle       = {\imprimirtitulo},
+  pdfsubject     = {\imprimirpreambulo},
+  pdfproducer    = {\LaTeX},
+  pdfcreator     = {pdflatex},
+  colorlinks     = true,
+  linkcolor      = black,            % Cor de links internos
+  citecolor      = black,            % Cor dos links para a bibliografia
+  filecolor      = black,            % Cor dos links
+  urlcolor       = blue,
+  bookmarksdepth = 4}
+% Palavras-chave para a ficha catalográfica
+\palavraschave{Cooperativas de Crédito}{Eficiência}{Regulação}{Governo}
+% ----------------------------------------------------------------------------%
+%         BIBLIOGRAFIA/CITAÇÕES                                               %
+% ----------------------------------------------------------------------------
+% ABNT
+\usepackage[bibjustif, abnt-full-initials=yes, abnt-repeated-title-omit=yes, alf]{abntex2cite} 
+% Qualquer coisa adicionar: abnt-emphasize=it
+%------------------------------------
+% Estilo APA
+%\usepackage[natbibapa]{apacite} 
+%\renewcommand{\BBAB}{e} % Troca "and" por "e" em apacite
+%-----------------------------------
+% Estilo Harvard
+% \usepackage{harvard} % para definições de bibliografia harvard (Usa com "and")
+% \citationstyle{dcu} 
+% \renewcommand{\harvardand}{\&} % troca "e" por "\&"
+%------------------------------------
+% Estilo de Vancouver
+%\bibliographystyle{vancouver}
+%\setcitestyle{numbers}
+% ----------------------------------------------------------------------------%
+%         ELEMENTOS PRÉ-TEXTUAIS                                              %
+% ----------------------------------------------------------------------------%
+\begin{document}
+
+\imprimircapa
+\input{versocapa} % Verso da capa
+\imprimirfolhaderosto
+
+\input{fichacatalografica}  % Ficha Catalográfica
+\input{folhaaprovacao} % Folha de Aprovação
+
+\begin{dedicatoria}
+\begin{flushright}
+\vspace*{\fill}
+\begin{minipage}{.52\textwidth}
+A dedicatória é um elemento pré-textual opcional.
+\end{minipage}
+\end{flushright}
+\end{dedicatoria}
+\begin{agradecimentos}
+Os agradecimentos são um elemento pré-textual opcional.
+\end{agradecimentos}
+
+\begin{epigrafe}
+\begin{flushright}
+\vspace*{\fill}
+\begin{minipage}{.52\textwidth}
+A epígrafe é um elemento pré-textual opcional.
+\end{minipage}
+\end{flushright}
+\end{epigrafe}
+
+% Resumo
+\begin{resumo}
+\tipotrabalho{Manual}
+\vspace{\onelineskip}
+
+Este projeto visa analisar como e se os mecanismos de monitoramento impostos pelo Banco Central do Brasil (BACEN), órgão responsável por regulamentar instituições financeiras no Brasil, possuem impacto no índice de eficiência da prestação de serviços das cooperativas de crédito em comparação às instituições bancárias privadas, uma vez que estes dois tipos de instituições possuem características e regulações distintas. Este estudo é importante pois impactos na eficiência da cooperativa de crédito afetam diretamente em sua capacidade de atender o cooperado e desenvolver a comunidade em que está inserida. Exemplos de mecanismos de regulações impostas pelo BACEN que influenciam na estrutura de governança das cooperativas de crédito são as Resoluções nº 4.434  e 4.454 de 2015 que tratam da separação do Conselho de Administração e da Diretoria Executiva para cooperativas de crédito clássica com ativo total superior a R\$50 milhões ou plenas, e que obriga as cooperativas a contratarem empresa de auditoria externa, respectivamente. O período estudado cobre os anos de 2003 a 2021, pois nesta janela de tempo será possível analisar a eficiência das cooperativas, monitorando as que não atingiam o montante mínimo de ativos totais para se enquadrar na resolução e o momento em que passaram a enquadrar e, em ambos os casos, comparar com a eficiência dos bancos privados no período. A metodologia utilizada para avaliar o nível de eficiência das cooperativas de crédito será Análise Envoltória dos Dados (DEA) com dados contábeis fornecidos pelas instituições ao BACEN e tratados pelo Observatório do Cooperativismo da USP (OBSCOOP/USP). Após isso, para verificar a influência de alterações na regulação, será utilizado o modelo econométrico Regressão de Descontinuidade (RDD) fuzzy.
+
+\vspace{\onelineskip}
+
+\textbf{Palavras-chave}: \imprimirchaves
+
+\jel{Y20} 
+\end{resumo}
+
+% Abstract
+\begin{resumo}[Abstract]
+\engtype{Manual} % Tipo de trabalho em inglês
+
+O resumo em inglês é um elemento pré-textual obrigatório. 
+
+\vspace*{\onelineskip}
+\noindent
+\textbf{Keywords}: \imprimirchaves \\
+\jel{} 
+\end{resumo}
+
+% Lista de ilustrações 
+% \newpage
+% \pdfbookmark[0]{\listfigurename}{lof}
+% \listoffigures*
+% \cleardoublepage
+
+% Lista de tabelas 
+% \pdfbookmark[0]{\listtablename}{lot}
+% \listoftables*
+% \cleardoublepage
+
+% Lista de quadros (opcional)
+% \pdfbookmark[0]{\listtablename}{loq}
+% \listofquadros*
+% \cleardoublepage
+
+% Lista de abreviaturas e siglas (opcional)
+% \begin{siglas}
+%   \item
+% \end{siglas}
+
+% Sumário 
+\phantom{x}
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+\mainmatter 
+\pagestyle{meuestilo}
+
+% ----------------------------------------------------------------------------%
+%         ELEMENTOS TEXTUAIS                                              %
+% ----------------------------------------------------------------------------%
+
+% \section*{EXEMPLO} % Para não aparecer no sumário
+% \addcontentsline{toc}{chapter}{EXEMPLO} % Para capítulos sem numeração que aparecem no sumário
+
+\addcontentsline{toc}{chapter}{RESUMO} 
+\chapter*{Resumo}
+
+
+
+\addcontentsline{toc}{chapter}{INTRODUÇÃO} 
+\chapter*{Introdução}
+
+Pergunta: A atividade regulatória do Banco Central tem efeito diferente na sobrevivência das cooperativas de crédito do que nos bancos privados (ou associações de crédito, fintechs, etc)? Por que a regulação é diferente?
+
+
+\chapter{Cooperativas de crédito: resiliência e regulação}
+
+\section{Resumo}
+Pergunta a ser respondida: Quanto da resiliência das cooperativas de crédito, em tempos de crise, não se deve a regulação?
+
+\section{Introdução}
+
+As cooperativas de crédito fornecem serviços financeiros e crédito a comunidades que, de outra forma, poderiam não ter acesso a eles, especialmente em tempos de crises econômicas.  As principais diferenças entre cooperativas de crédito e bancos privados estão no fato das cooperativas não terem fins lucrativos, possuírem número ilimitado de associados, cada associado tem direito a um voto na tomada de decisão da cooperativa independente da quantidade de quotas que possui e os resultados financeiros de atos cooperativos (operações com cooperados) são isentas de tributos \cite{santos2009}.
+
+Embora possua uma participação pequena, com o passar do tempo, está crescendo cada vez mais no fornecimento de crédito e serviços financeiros no Sistema Financeiro Nacional (SFN), levando ao aumento de competitividade no mercado de crédito e serviços financeiros, ainda que o número de cooperativas tenha sido reduzido, devido ao encerramento de suas atividades ou incorporações.
+
+As cooperativas de crédito têm sido incentivadas pelas políticas governamentais por contribuírem para a democratização do acesso aos serviços financeiros, visto que, segundo \citeonline{parente2003}, muitos de seus associados não iriam obter o acesso ao crédito via bancos tradicionais, possibilitando o desenvolvimento das comunidades que estão inseridas. 
+
+Dada a contribuição das cooperativas ao ambiente em que está inserida e o benefício dado aos cooperados, o BACEN que é o órgão regulador de empresas do setor financeiro, dispõe de medidas para garantir a seguridade dos associados e a transparência em cooperativas de crédito.
+
+Cooperativas de crédito mais eficientes desempenham melhor seu papel socioeconômico, promovendo desintermediação financeira, que torna o diferencial entre as taxas de captação e empréstimos, realizados aos cooperados, pequeno, gerando mais oportunidades para a circulação de recursos e, consequentemente, o desenvolvimento local, já que depositantes e tomadores de empréstimos normalmente pertencem à mesma localidade \cite{ferreiragoncalvesbraga2007}. Além disto, a eficiência também eleva a capacidade de gerar sobras, as quais representam o retorno excedente que pode ser distribuído aos sócios, reinvestido na cooperativa, ou, conforme enfatizado por \citeonline{burigo1997}, pode retornar na forma de juros mais altos sobre as aplicações (depósitos de longo prazo), ou na forma de menor custo, reduzindo as taxas de empréstimos e de prestação de serviços. 
+
+Visto isso, se faz importante verificar se os mecanismos de monitoramento e regulamentação impostos as cooperativas de crédito possuem influências positivas ou negativas em sua eficiência, uma vez que isto impacta diretamente em sua capacidade de atender o cooperado e desenvolver a comunidade.
+
+\section{Revisão de literatura}
+
+A definição de eficiência refere-se à otimização de recursos e à ausência de desperdício. Assim, eficiência se dá pela utilização máxima dos recursos existentes na empresa para satisfazer as necessidades os desejos de indivíduos e organizações (Varian, 1992). Em cooperativas de crédito, \citeonline{porterscully1987} tratam a eficiência como resultado da escolha de seus objetivos e que pode ser medida igualizando o benefício marginal trazido ao cooperado com o custo marginal da cooperativa, que aparecem em três formas: preço, escala e técnica/gerencial. 
+
+Ainda, quanto a eficiência, lembram que cooperativas possuem diferenças em comparação com empresas tradicionais, que seriam: 1) Direito ao fluxo de caixa não é transferível, logo, utilizam menos capital na produção; 2) Como o direito ao fluxo de caixa não é concentrado, os potenciais retornos e o monitoramento são reduzidos, elevando o grau de x-ineficiência (quando o gestor não toma as melhores decisões para a alocar os recursos da cooperativa); 3) Como aumentar o tamanho da cooperativa implica em aumentar os problemas de controle, também não são esperados aumentos no ganho de escala.
+
+As fontes de ineficiência reconhecidas, de acordo com \citeonline{porterscully1987}, são: 1) Alocativa: quando o custo médio de produção não é a combinação da minimização dos custos das entradas; 2) Escala: quando o resultado da produção não minimiza os custos de longo prazo; 3) técnica (conhecida como gerencial ou x-ineficência): quando as entradas falham ao alcançar o potencial da produção. 
+
+Quanto a ineficiência técnica, x-ineficência, esta sugere que se os mesmos recursos fossem geridos de melhor forma, os resultados também seriam melhores, uma vez que reduziria o custo médio. Logo, estas firmas tendem a ser adquiridas por especialistas que podem corrigir essas falhas e obter maiores ganhos de acordo com o grau de correção \cite{leibenstein1978, porterscully1987}.
+
+\citeonline{porterscully1987} ainda dizem que a separação entre a propriedade e a gestão pode trazer melhoras na eficiência pois a transferência de recursos, a especialização e o custo da tomada de risco aumentam a capacidade de sobrevivência da firma, assim como \citeonline{costachaddadazevedo2012} encontraram em cooperativas agropecuárias. Entretanto, a separação também é responsável por introduzir os problemas de principal-agente, fazendo com que o principal crie, monitore e \textit{enforce} o contrato sob o agente para que a função objetivo da firma seja maximizada.
+
+Então, \citeonline{porterscully1987} dizem que para uma cooperativa ser tão eficiente quanto uma empresa de um único dono ou uma sociedade por ações, é preciso que: 1) o capital dos membros e os investimentos sejam invariantes no tempo; 2) cooperados e cooperativa tenham vida infinita; 3) os membros tenham preferências homogêneas quanto a renda e risco; 4) a função de produção também deve ser homogênea para todos os cooperados.
+
+Quanto a estrutura dos direitos de propriedade da cooperativa, ela pode levar a problemas de interação, que levam a problemas de horizonte, não-transferibilidade e controle, que geram ineficiência. Os problemas de horizonte surgem quando o fluxo de caixa gerado por um ativo é menor sua via produtiva, fazendo com que o retorno aos investidores também seja menor, resultando em sub investimento nestes ativos. Além do fato de membros mais novos não terem os mesmos incentivos para investirem, uma vez que os antigos membros já realizaram o investimento da produção.
+
+Outro fator que traz ineficiência é o custo de monitoramento do contrato dos gestores para que ele siga os interesses da cooperativa e não haja expropriação de bens não pecuniários ou de fluxo de caixa. \citeonline{porterscully1987} ainda destacam que este problema é pior em cooperativas, pois como as cotas não podem ser vendidas, não existe informação no mercado sobre o desempenho do gestor, logo, o monitoramento interno deve ser mais severo. Ainda, como os ganhos de eficiência não podem ser resgatados, o incentivo para monitorar o gestor é reduzido. Além do problema agente-principal ser considerado agente e multi-principais, levando a diferentes funções objetivo que o agente deve maximizar.
+
+Ainda, conforme destaca \citeonline{leibenstein1978} com agente desenvolvendo uma ou mais tarefas, é factível considerar, portanto, que os mecanismos de monitoramento e incentivo têm efeitos sobre as decisões dos agentes. Isto é, afetam seu desempenho de forma que podem desenvolver maiores níveis de esforço à atividade de administração da cooperativa e, por conseguinte, no nível de “x-eficiência” da organização.
+Autores como \citeonline{crainzardkoohi1980} e \citeonline{chen2001} ainda mostram que firmas que são reguladas pelo governo e interferem nas decisões dos gestores acabam por gerar “x-ineficiência”. \citeonline{chen2001}, que estudou o setor bancário, mostrou que a desregulamentação para gerar competição, levou ao aumento da “x-eficiência”. Estes trabalhos explicam como os reguladores, governo e mercado, impactam nas decisões dos gestores. 
+
+Sendo assim, existem mecanismos internos que impactam nas decisões dos gestores, como no caso das cooperativas de crédito, são os conselhos administrativos e fiscais, comitês de auditoria, etc. \cite{gillan2006}. Estes mecanismos internos afetam o nível de esforço que o gestor despende em sua função, como apresentam \citeonline{alchiandemsetz1972}, \citeonline{milgromroberts1990}. Logo, quando o órgão regulador, como o BACEN para o caso das cooperativas de crédito Brasileiras, impõe alguma regulamentação que eleva o nível de monitoramento das atividades do gestor ele também influencia na tomada de decisão do gestor que pode elevar ou reduzir sua eficiência, no caso, “x-eficiência”.
+
+\citeonline{friedlovelleeckaut1993} dizem que como as cooperativas de crédito aceitam empréstimos dos membros e, também, realizam empréstimos aos membros, ela possui tanto características de cooperativas de produção, quanto de consumo. E, por esse motivo também, existe conflito de interesses entre tomadores e emprestadores para obterem as taxas que mais os beneficiam. 
+
+Estes são os principais motivos que diferenciam as cooperativas de crédito dos bancos privados, por isso a comparação ao avaliar a performance não deve ser feita apenas na base da capacidade de gerar lucro, mas de acordo com sua própria função objetivo. Embora ambas estejam em competição no mesmo mercado e com serviços semelhantes. 
+
+No caso das cooperativas de crédito, \citeonline{friedlovelleeckaut1993} destacam que deve ser considerada como sua função objetivo trazer maior benefício possível aos membros. Os autores consideram maior benefício como a maior provisão de serviços dada a disponibilidade de recursos e o ambiente operacional. Como recursos são considerados: recursos humanos, gastos operacionais, e trabalho voluntário e patrocínio/doação. Os dois primeiros são fáceis de medir, o último é quase impossível. Ainda, consideram que uma cooperativa é subsidiada se ao menos umas destas despesas forem zero: salários, despesas de escritório e despesas operacionais.
+
+Uma vez que a provisão de serviços aos membros é considerada medida de eficiência, \citeonline{friedlovellyaisawarng1999} estudam se a incorporação de cooperativas de crédito traz benefícios aos membros, tanto da cooperativa incorporadora quanto da que foi incorporada. Para isso verificam a capacidade das cooperativas de crédito em transformar os recursos disponíveis (humanos e financeiros) em serviços para seus membros.
+
+Então, utilizaram indicadores que combinavam recursos humanos e físicos: 1) despesas operacionais; 2) quantidade de depósitos; 3) Taxa de depósito; 4) Quantidade de empréstimo; 5) Taxa de empréstimo; 6) Volume de transações, e; 7) Variedade de serviços.
+
+Com estas variáveis é possível obter informações sobre a habilidade da cooperativa em promover o encontro das necessidades dos poupadores e tomadores, e as taxas que mais os atraem. 
+
+A análise realizada neste trabalho foi dividida em duas etapas, sendo a primeira chamada de Análise Envoltória de Dados (DEA) desenvolvida por \citeonline{charnescooperrhodes1978} e aprimorada por \citeonline{bankercharnescooper1984}, que resulta em uma pontuação de performance relacionada ao atendimento aos membros, para cada incorporação. Esta pontuação é uma medida de eficiência que mostra o quão bem uma cooperativa de crédito atende aos seus membros em relação à amostra. Então estes resultados serão comparados entre incorporadoras e incorporadas. 
+
+Os resultados encontrados por \citeonline{friedlovellyaisawarng1999} indicam que as cooperativas incorporadoras não apresentam sinais de deterioração após a incorporação, enquanto a incorporada apresenta melhora de performance logo após a incorporação. Logo, membros de cooperativas incorporadoras não sofrem prejuízos com a incorporação, enquanto membros das incorporadas são beneficiados.
+
+\citeonline{ralstonwrightgarden2001} ainda dizem que pequenas instituições utilizam de incorporações como tentativa de obterem ganhos com economias de escala e, assim, permanecerem competitivos contra grandes rivais no mercado. Além disso, as cooperativas de crédito se utilizam de incorporações como estratégia para melhor atender as necessidades dos membros/clientes. Ainda, as incorporações permitem que a reputação das instituições já bem estabelecidas cresça e alcance novos consumidores.
+
+\citeonline{ralstonwrightgarden2001}  analisam as cooperativas de crédito individualmente em períodos pré (um ano) e pós (três anos) incorporação para verificar se houve aumento na eficiência técnica ou de escala. Os resultados encontrados indicam que existe a possibilidade de a cooperativa incorporada ter ganhos de eficiência técnica e, ao mesmo tempo, perdas em eficiência de escala. E vice-versa, a depender de diversos fatores e características das cooperativas envolvidas. E, ao contrário de estudos anteriores, os maiores benefícios não surgiram da incorporação onde a incorporadora era mais eficiente que a incorporada, transferindo sua eficiência, mas sim de cooperativas que não eram eficientes antes da incorporação.
+
+Olhando para o Brasil, alguns trabalhos que tratam do tema eficiência em cooperativas de crédito foram escritos por \citeonline{dambroslimafigueiredo2009}, \citeonline{bressanbragabressan2010}, \citeonline{matiasquagliolimamagnani2014} e \citeonline{bittencourtbressan2018}.
+
+\citeonline{dambroslimafigueiredo2009} analisaram a eficiência econômica das cooperativas de crédito localizadas apenas no estado do Paraná nos anos de 2005 e 2006 através da técnica estatística análise fatorial, em que os resultados apresentados indicam que a maior parte das cooperativas são ineficientes quando os fatores aplicação do crédito, rentabilidade econômica e liquidez são estudados em conjunto. Já \citeonline{bressanbragabressan2010} estudaram a eficiência de custo e a economia de escala de  42 cooperativas de crédito mútuo localizadas em Minas Gerais de 2001 a 2003. Para estimar a eficiência de custo foi aplicada a técnica paramétrica fronteira estocástica, e para analisar a hipótese da economia de escala foi estudada a relação entre produtos e custos. Os  resultados apontam alta ineficiência de custo e relação positiva da eficiência com as variáveis capital físico, produto e trabalho, assim como mostram que as cooperativas operam na faixa de economia de escala.
+
+Já o trabalho de \citeonline{matiasquagliolimamagnani2014} comparou os índices de eficiência e receita da prestação de serviços entre as maiores cooperativas de crédito e os maiores bancos públicos e privados Brasileiros através de análises horizontais e verticais, concluindo que os bancos privados são mais eficientes que bancos públicos, que são mais eficientes que as cooperativas de crédito. O resultado se altera em períodos de crises quando cooperativas de crédito passam a ser mais eficientes que bancos públicos. Ainda, justificam a utilização de receita de prestação de serviços como medida de desempenho, pois, segundo \citeonline{bressanbragabressan2010} ,  quanto maior a relação entre prestação de serviços e despesas administrativas, maior é a eficiência da cooperativa.
+
+Enquanto \citeonline{bittencourtbressan2018} estudaram todas cooperativas de crédito Brasileiras de 2009 a 2014, separadas por tipo, sistema e região, utilizando a metodologia de Análise Envoltória de Dados (DEA), assim como  \citeonline{friedlovellyaisawarng1999}. As variáveis utilizadas foram depósitos totais, despesas de captação, despesas administrativas, operações de crédito e sobras. Os resultados indicam que 70\% das cooperativas de crédito são eficientes e que as demais são ineficientes por utilização inadequada dos fatores de produção, como depósitos e despesas de captação.
+
+Mais recente, o estudo de \citeonline{santosbressanmoreiralima2021} analisou a relação entre o risco de crédito e a eficiência técnica das cooperativas de crédito brasileiras no período de 2008 a 2017, aplicando a metodologia DEA e a regressão Tobit para identificar quais variáveis impactaram no DEA. Com isso, concluiu que quanto maior o risco de crédito, menores os escores de eficiência. 
+
+Ainda, os referidos autores destacam que essa relação negativa entre risco de crédito e eficiência pode indicar que os gerentes, avessos ao risco, tenderiam a aumentar os gastos operacionais destinados à avaliação e ao monitoramento dos empréstimos, numa tentativa de controlar o aumento na inadimplência, o que impactaria, de forma negativa, a medida de eficiência do banco. Por outro lado, teria um efeito positivo sobre a inadimplência nas carteiras de crédito, de modo a reduzi-la. Assim, gerentes avessos ao risco tenderiam
+a elevar os gastos com monitoramento para ter controle dos créditos inadimplentes, o que reduziria a eficiência bancária \cite{tabakcraveirocajueiro2010}.
+
+Embora nem todos os trabalhos façam a comparação de eficiência entre cooperativas de crédito e bancos privados, todos levam em consideração as características particulares das cooperativas, principalmente a função objetivo ser  maximizar o bem-estar do cooperado ao invés do lucro. Com isso, quando analisadas as cooperativas de crédito brasileiras, temos que o monitoramento dos órgãos reguladores, como o BACEN, que podem impactar na eficiência do empreendimento uma vez que pode influenciar na forma como o gestor aloca os recursos da cooperativa. 
+Entretanto os trabalhos anteriores não consideraram se a influência dos órgãos regulares alteram o nível de eficiência técnica (x-eficiênca), uma vez que aumento nos mecanismos de monitoramento podem influenciar nas tomadas de decisão dos gestores. Exemplos de mecanismos de monitoramento impostos pelo Banco Central do Brasil (BACEN) são as Resoluções nº 4.434  e 4.454 de 2015 que tratam da separação do Conselho de Administração e da Diretoria Executiva para cooperativas de crédito com ativo total superior a R\$50 milhões e que obriga as cooperativas a contratarem empresa de auditoria externa, respectivamente. 
+
+
+
+\section{Base de dados e método}
+
+\subsection{Dados e amostra}
+
+O presente estudo será desenvolvido a partir dos dados encontrados nos balanços patrimoniais das cooperativas de crédito e dos bancos privados que foram disponibilizados pelo BACEN e tratados pelo OBSCOOP/USP. A amostra será composta inicialmente por dados dos anos 2003 a 2021 de todas as cooperativas de crédito de dos bancos privados que estavam ativos nos períodos de análise. Então, serão selecionadas apenas as cooperativas de crédito, que serão analisadas de forma independente separadas por sistema de filiação, tamanho e área de atuação para fins de controle. O tamanho será controlado por cooperativas de crédito clássicas com ativos totais maiores e menores de R\$50 milhões e plenas, visto que apenas as cooperativas de crédito com mais de R\$50 milhões em ativos totais são obrigadas a contratar um terceiro como gestor.
+
+\subsection{Método}
+
+O modelo utilizado para analisar o nível de eficiência das cooperativas de crédito será o  modelo de Análise Envoltória de Dados (DEA) desenvolvido por \citeonline{charnescooperrhodes1978} e aplicado em cooperativas de crédito dos Estados Unidos inicialmente por \citeonline{friedlovellyaisawarng1999}, enquanto no Brasil foi utilizado por \citeonline{bittencourtbressan2018} para o analisar a eficiência das cooperativas de crédito Brasileiras.
+
+O modelo DEA é uma técnica não paramétrica utilizada para comparar a geração de saída de cada instituição em relação aos seus insumos, assumindo a forma de pontuação. Esta pontuação é dada pela ponderação das proporções de valores semelhantes das combinações de entradas e saídas das demais firmas concorrentes \cite{bittencourtbressan2018}.
+
+Despesas com juros mais altas implicam maiores quantidades de recursos, ou seja, maiores quantidades de depósitos, por exemplo. Portanto, as instituições financeiras mais eficientes são capazes de utilizar menos insumos, como despesas com juros e despesas operacionais, para produzirem mais saídas, como depósitos, empréstimos e investimentos (STAUB et al., 2010).  
+Assim como \citeonline{bittencourtbressan2018}, serão utilizadas como variáveis algumas contas contábeis disponíveis no Plano Contábil das Instituições do Sistema Financeiro Nacional (COSIF), como depósitos totais (COSIF: 4.1.0.00.00-7), as despesas de captação (COSIF: 8.1.1.00.00-8), despesas administrativas (COSIF: 8.1.7.00.00-6), outras despesas operacionais (COSIF: 8.1.9.00.00-2), operações de crédito (COSIF: 1.6.0.00.00-1) e as sobras (COSIF: 7.0.0.00.00-9 + 8.0.0.00.00-6). Com estas variáveis será possível observar a composição dos recursos das cooperativas de acordo com seu nível de eficiência e como o fator de sua produção afeta a eficiência.
+
+Então, após estimada a pontuação do DEA para cada cooperativa de crédito por ano, será realizada uma Regressão de Descontinuidade (RDD) para identificar se os efeitos da legislação na governança cooperativa afetaram o desempenho dos gestores, causando impacto na eficiência da mesma.
+
+\section{Resultados}
+
+As cooperativas de crédito serão classificadas quanto ao seu nível de eficiência de acordo com a pontuação fornecida pelo DEA no período analisado, ano a ano. Apesar do tamanho da cooperativa de crédito não afetar a análise do DEA, como o tamanho é um fator fundamental para a aplicação da Resolução nº 4.434 de 2015 que dispõe sobre a contatação de um gestor para cooperativas clássicas com mais de R\$50 milhões em ativo total ou plenas, as cooperativas serão também separadas por tamanho, maiores e menores. 
+
+Como a pontuação e eficiência da cooperativa acontece de forma anual durante a análise, as cooperativas de crédito serão acompanhadas durante seu tempo de atividade para avaliar como se comportaram a eficiência daquelas que antes não atingiam o volume mínimo de ativo total para se enquadrarem na Resolução nº 4.434 e que como passar do tempo passaram a enquadrar.
+
+Como forma de estimar os efeitos, será realizada a Regressão de Descontinuidade Fuzzy (RDD), uma vez que compreende toda a amostrada das cooperativas que foram obrigadas a adotar o procedimento ou que adotaram por livre vontade. Assim será possível observar o efeito das resoluções nas cooperativas que foram obrigadas a adotar as medidas.
+
+
+\section{Conclusão}
+
+sdfsdfsdfsdfsdfdfdsfdsfd
+
+
+
+
+\chapter{Regulação e eficiência dos gestores de cooperativas de crédito}
+
+\section{Resumo}
+Pergunta: Setores protegidos tendem a ter gestores mais ineficientes. O quanto a regulação afeta a eficiência dos gestores de cooperativas de crédito?
+
+Ler sobre x-ineficiência
+
+\section{Introdução}
+\section{Revisão de literatura}
+\section{Base de dados e método}
+\subsection{Base de dados}
+\subsection{Método}
+\section{Resultados}
+\section{Conclusão}
+
+
+\chapter{Capítulo 3 - A definir}
+
+Pergunta: ?????
+
+\section{Introdução}
+\section{Revisão de literatura}
+\subsection{Gestores e Cooperativas}
+\subsection{Eficiência e x-ineficiência}
+\section{Base de dados e método}
+\subsection{Base de dados}
+\subsection{Método}
+\section{Resultados}
+\section{Conclusão}
+
+
+
+
+% ----------------------------------------------------------------------------%
+%         ELEMENTOS PÓS-TEXTUAIS                                              %
+% ----------------------------------------------------------------------------%
+% \bibliographystyle{apacite} % APA
+% \bibliographystyle{vancouver} % Vancouver
+% \bibliographystyle{dcu} % Harvard
+\bibliographystyle{abntex2-alf} %abnt
+\bibliography{referencias/referencias.bib}
+\begin{anexosenv}
+\chapter{Exemplo de Anexo}
+Um anexo.
+\begin{figure}[H]
+ \caption{Brasão da Universidade de São Paulo}
+    \centering
+    \includegraphics[width=.3\textwidth]{figuras/brasao_usp.eps}
+    \fonte{Universidade de São Paulo}
+    \label{fig:brasao2}
+\end{figure}
+
+\ctable[caption = {Título da figura}, 
+label = tab:label2, 
+figure, 
+pos = h
+]{c}{\tnote[]{Nota: Uma figura utilizando o pacote ctable.}}
+{\includegraphics[width=.3\textwidth]{figuras/brasao_usp.eps}}
+
+\end{anexosenv}
+
+\begin{apendicesenv}
+\chapter{Exemplo de Apêndice}
+Um exemplo de apêndice.
+\input{tabelas/quadro.tex}
+Um exemplo de tabelas usando o pacote \texttt{ctable}:
+\input{tabelas/ctable.tex}
+\end{apendicesenv}
+\end{document}
+
